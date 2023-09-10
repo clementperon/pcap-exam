@@ -1,8 +1,0 @@
-name: Build w/ Cmake
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - cmake -S . -B obj
-      - cmake --build obj

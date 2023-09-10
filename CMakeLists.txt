@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.12)
 
-project(pcap_exam)
+project(pcap_exam LANGUAGES C)
 
 include(FetchContent)
 
@@ -14,4 +14,4 @@ FetchContent_MakeAvailable(libpcap)
 
 add_executable(pcap_exam pcap_exam.c)
 
-target_link_libraries(pcap_exam PRIVATE libpcap)
+target_link_libraries(pcap_exam PRIVATE pcap)

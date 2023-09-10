@@ -1,0 +1,13 @@
+name: Build w/ Cmake
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure CMake
+        run: cmake -S . -B obj
+
+      - name: Build CMake
+        run: cmake --build obj
