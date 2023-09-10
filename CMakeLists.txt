@@ -12,6 +12,14 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(libpcap)
 
+# Executable
 add_executable(pcap_exam pcap_exam.c)
-
 target_link_libraries(pcap_exam PRIVATE pcap)
+
+# So Lib
+add_library(pcap_exam_lib pcap_exam.c)
+target_link_libraries(pcap_exam_lib PRIVATE pcap)
+
+# Static Lib
+add_library(pcap_exam_lib_static STATIC pcap_exam.c)
+target_link_libraries(pcap_exam_lib_static PRIVATE pcap_static)
